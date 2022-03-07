@@ -1,1 +1,7 @@
 @use "node_modules/bootstrap/scss/bootstrap";
+
+// add icon functionality
+.bi {
+  display: inline-block;
+  vertical-align: -0.125em;
+}
