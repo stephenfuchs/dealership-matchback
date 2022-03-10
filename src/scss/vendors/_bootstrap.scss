@@ -1,7 +1,38 @@
-@use "node_modules/bootstrap/scss/bootstrap";
+$purple: #7c4199;
+$primary: $purple;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  // 4px
+  2: $spacer * 0.5,
+  // 8px
+  3: $spacer,
+  // 16px
+  4: $spacer * 1.5,
+  // 24px
+  5: $spacer * 2,
+  // 32px
+  6: $spacer * 2.5,
+  // 40px
+  7: $spacer * 3,
+  // 48px
+  8: $spacer * 3.5,
+  // 56px
+  9: $spacer * 4,
+  // 64px
+);
+
+@import "node_modules/bootstrap/scss/bootstrap";
 
 // add icon functionality
 .bi {
   display: inline-block;
   vertical-align: -0.125em;
+}
+
+table td {
+  font-size: 0.875rem;
+  text-transform: uppercase;
 }
