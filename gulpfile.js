@@ -6,6 +6,8 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const htmlmin = require("gulp-htmlmin");
 const browsersync = require("browser-sync").create();
+const babel = require("gulp-babel");
+const plumber = require("gulp-plumber");
 
 // SASS Task
 function scssTask() {

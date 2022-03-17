@@ -16,6 +16,7 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
     "postcss": "^8.3.7",
-    "sass": "^1.42.1"
+    "sass": "^1.42.1",
+    "vanillajs-datepicker": "^1.2.0"
   }
 }
