@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>webpack starterkit</title>
+  <meta name="description" content="A light foundation for your next frontend project based on webpack.">
+</head>
+
+<body>
+  <section class="startup">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-md-offset-3">
+          <form>
+            <div class="mb-3">
+              <label for="clientName" class="form-label">Client Name</label>
+              <input type="text" class="form-control" id="clientName" aria-describedby="clientHelp">
+              <div id="clientHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="row" id="foo">
+              <label for="dateRange" class="form-label">Date Range</label>
+              <div class="input-group mb-3 date input-daterange">
+                <input type="text" name="range-start" class="form-control datepicker-input" autocomplete="off">
+                <span class="input-group-text">to</span>
+                <input type="text" name="range-end" class="form-control datepicker-input">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="csvFile" class="form-label">CSV Data</label>
+              <input class="form-control" type="file" id="formFile">
+            </div>
+            <button type="submit" class="btn btn-primary"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+                <use xlink:href="images/bootstrap-icons.svg#pie-chart" />
+              </svg>Generate Report</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="report d-none">
+    <nav class="nav-bar navbar-expand-md navbar-dark bg-dark mb-5">
+      <div class="container d-flex py-3">
+        <img src="images/matchback_logo-light.svg" alt="Matchback Report Logo">
+        <div class="ms-auto">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <div class="btn-group me-3" role="group" aria-label="Create new or modify button group">
+              <button type="button" class="btn btn-outline-light"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+                  <use xlink:href="images/bootstrap-icons.svg#plus-circle" />
+                </svg>New</button>
+              <button type="button" class="btn btn-outline-light"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+                  <use xlink:href="images/bootstrap-icons.svg#sliders" />
+                </svg>Modify</button>
+            </div>
+            <button type="button" class="btn btn-primary"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+                <use xlink:href="images/bootstrap-icons.svg#cloud-arrow-down-fill" />
+              </svg>Download PDF</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header class="header mb-3">
+      <div class="container d-flex mb-6">
+        <div class="flex-grow-1">
+          <p class="header__dealership h5 mb-0">Lexus of Naperville</p>
+          <p class="header__report text-muted mb-0">Influenced Sales Report</p>
+        </div>
+        <div class="align-self-center d-none d-sm-block">
+          <img src="images/aronson_logo.svg" alt="Aronson Advertising Logo" class="header__logo img-fluid float-end">
+        </div>
+      </div>
+      <div class="container d-flex flex-wrap">
+        <h1 class="h3 mb-0 flex-grow-1">Email Marketing Program</h1>
+        <p class="header__dates text-muted mb-0 text-align-end">March 1, 2022 - April 1, 2022</p>
+      </div>
+    </header>
+    <section class="map mb-6">
+      <div class="container">
+        <img src="https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-88.1947,41.7633,10,0/1280x700?access_token=pk.eyJ1IjoiYXJvbnNvbmFkdiIsImEiOiJjbDBoMjl3eDcwNGdwM2tveTQzczd4dnpiIn0.n7wUk5vc0eXOWmWD1Bwolg" alt="map" class="img-fluid">
+        <div class="d-flex flex-wrap justify-content-between">
+          <p>Influenced Buyers = Sold Unsupressed Audience Profile Members</p>
+          <div>
+            <p>Legend</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="buyers-new mb-6">
+      <div class="container">
+        <h3 class="h5">Influenced New Vehicle Buyers <span class="buyers-new__badge badge bg-dark">25</span></h3>
+        <div class="table-responsive">
+          <table class="buyers-new__table table table-striped table-sm">
+            <thead class="table-dark">
+              <tr>
+                <td>Customer Name</td>
+                <td colspan="4">Address</td>
+                <td>N/U</td>
+                <td colspan="3">Vehicle</td>
+                <td>Sale Date</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+              <tr>
+                <td>Patrick Clifford Matzdorf</td>
+                <td>1420 Belleau Woods Court</td>
+                <td>Carol Stream</td>
+                <td>IL</td>
+                <td>60188</td>
+                <td>N</td>
+                <td>2021</td>
+                <td>Lexus</td>
+                <td>ES 300H</td>
+                <td>3/9/2022</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="buyers-used">
+      <div class="container">
+        <h3 class="h5">Influenced Used Vehicle Buyers <span class="buyers-used__badge badge bg-dark">17</span></h3>
+        <table class="buyers-used__table table table-striped table-sm">
+          <thead class="table-dark">
+            <tr>
+              <td>Customer Name</td>
+              <td colspan="4">Address</td>
+              <td>N/U</td>
+              <td colspan="3">Vehicle</td>
+              <td>Sale Date</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+            <tr>
+              <td>Patrick Clifford Matzdorf</td>
+              <td>1420 Belleau Woods Court</td>
+              <td>Carol Stream</td>
+              <td>IL</td>
+              <td>60188</td>
+              <td>N</td>
+              <td>2021</td>
+              <td>Lexus</td>
+              <td>ES 300H</td>
+              <td>3/9/2022</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
