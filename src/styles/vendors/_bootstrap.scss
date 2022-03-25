@@ -1,4 +1,5 @@
 $purple: #7c4199;
+$white: #fff;
 $primary: $purple;
 $spacer: 1rem;
 $spacers: (
@@ -22,7 +23,8 @@ $spacers: (
   9: $spacer * 4,
   // 64px
 );
-$modal-backdrop-bg: #fff;
+$modal-content-border-width: 0;
+$modal-backdrop-bg: $white;
 $modal-backdrop-opacity: 1;
 
 @import "node_modules/bootstrap/scss/bootstrap";

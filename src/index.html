@@ -11,11 +11,11 @@
 <body>
   <section id="startup">
 
-    <!-- Modal -->
     <div class="modal fade" id="clientForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="clientFormLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
+            <img src="/public/images/matchback_logo-dark.svg" alt="Matchback Report Logo" class="mx-auto mb-9 d-block img-fluid">
             <form>
               <div class="mb-3">
                 <label for="clientName" class="form-label">Client Name</label>
@@ -38,7 +38,7 @@
                 <div id="csvHelp" class="form-text">Uplad a valid .csv file</div>
               </div>
               <button type="submit" class="btn btn-primary"><svg class="bi me-2" width="16" height="16" fill="currentColor">
-                  <use xlink:href="images/bootstrap-icons.svg#pie-chart" />
+                  <use xlink:href="/public/images/bootstrap-icons.svg#pie-chart" />
                 </svg>Generate Report</button>
             </form>
           </div>
@@ -53,7 +53,7 @@
   <main class="report">
     <nav class="nav-bar navbar-expand-md navbar-dark bg-dark mb-5">
       <div class="container d-flex py-3">
-        <img src="images/matchback_logo-light.svg" alt="Matchback Report Logo">
+        <img src="/public/images/matchback_logo-light.svg" alt="Matchback Report Logo">
         <div class="ms-auto">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,14 +61,14 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <div class="btn-group me-3" role="group" aria-label="Create new or modify button group">
               <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#clientForm"><svg class="bi me-2" width="16" height="16" fill="currentColor">
-                  <use xlink:href="images/bootstrap-icons.svg#plus-circle" />
+                  <use xlink:href="/public/images/bootstrap-icons.svg#plus-circle" />
                 </svg>New</button>
               <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#clientForm"><svg class="bi me-2" width="16" height="16" fill="currentColor">
-                  <use xlink:href="images/bootstrap-icons.svg#sliders" />
+                  <use xlink:href="/public/images/bootstrap-icons.svg#sliders" />
                 </svg>Modify</button>
             </div>
             <button type="button" class="btn btn-primary"><svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="images/bootstrap-icons.svg#cloud-arrow-down-fill" />
+                <use xlink:href="/public/images/bootstrap-icons.svg#cloud-arrow-down-fill" />
               </svg>Download PDF</button>
           </div>
         </div>
@@ -81,7 +81,7 @@
           <p class="header__report text-muted mb-0">Influenced Sales Report</p>
         </div>
         <div class="align-self-center d-none d-sm-block">
-          <img src="images/aronson_logo.svg" alt="Aronson Advertising Logo" class="header__logo img-fluid float-end">
+          <img src="/public/images/aronson_logo.svg" alt="Aronson Advertising Logo" class="header__logo img-fluid float-end">
         </div>
       </div>
       <div class="container d-flex flex-wrap">
