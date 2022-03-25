@@ -9,37 +9,48 @@
 </head>
 
 <body>
-  <section class="startup">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-md-offset-3">
-          <form>
-            <div class="mb-3">
-              <label for="clientName" class="form-label">Client Name</label>
-              <input type="text" class="form-control" id="clientName" aria-describedby="clientHelp">
-              <div id="clientHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="row" id="foo">
-              <label for="dateRange" class="form-label">Date Range</label>
-              <div class="input-group mb-3 date input-daterange">
-                <input type="text" name="range-start" class="form-control datepicker-input" autocomplete="off">
-                <span class="input-group-text">to</span>
-                <input type="text" name="range-end" class="form-control datepicker-input">
+  <section id="startup">
+
+    <!-- Modal -->
+    <div class="modal fade" id="clientForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="clientFormLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="clientName" class="form-label">Client Name</label>
+                <input type="text" class="form-control" id="clientName" aria-describedby="clientHelp">
+                <div id="clientHelp" class="form-text">We'll never share your email with anyone else.</div>
               </div>
-            </div>
-            <div class="mb-3">
-              <label for="csvFile" class="form-label">CSV Data</label>
-              <input class="form-control" type="file" id="formFile">
-            </div>
-            <button type="submit" class="btn btn-primary"><svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="images/bootstrap-icons.svg#pie-chart" />
-              </svg>Generate Report</button>
-          </form>
+              <div class="row date input-daterange" id="dateRange">
+                <div class="col mb-3">
+                  <label for="startDate" class="form-label">Start Date</label>
+                  <input type="text" name="startDate" class="form-control datepicker-input" autocomplete="off">
+                </div>
+                <div class="col mb-3">
+                  <label for="endDate" class="form-label">End Date</label>
+                  <input type="text" name="endDate" class="form-control datepicker-input">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="csvFile" class="form-label">CSV Data</label>
+                <input class="form-control" type="file" id="csvFile">
+                <div id="csvHelp" class="form-text">Uplad a valid .csv file</div>
+              </div>
+              <button type="submit" class="btn btn-primary"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+                  <use xlink:href="images/bootstrap-icons.svg#pie-chart" />
+                </svg>Generate Report</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <main class="report d-none">
+  <main class="report">
     <nav class="nav-bar navbar-expand-md navbar-dark bg-dark mb-5">
       <div class="container d-flex py-3">
         <img src="images/matchback_logo-light.svg" alt="Matchback Report Logo">
@@ -49,10 +60,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <div class="btn-group me-3" role="group" aria-label="Create new or modify button group">
-              <button type="button" class="btn btn-outline-light"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+              <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#clientForm"><svg class="bi me-2" width="16" height="16" fill="currentColor">
                   <use xlink:href="images/bootstrap-icons.svg#plus-circle" />
                 </svg>New</button>
-              <button type="button" class="btn btn-outline-light"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+              <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#clientForm"><svg class="bi me-2" width="16" height="16" fill="currentColor">
                   <use xlink:href="images/bootstrap-icons.svg#sliders" />
                 </svg>Modify</button>
             </div>

@@ -1,5 +1,4 @@
 const Path = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -7,20 +6,10 @@ module.exports = {
   output: {
     path: Path.join(__dirname, "../dist"),
     filename: "js/[name].js",
+    assetModuleFilename: "images/[name][ext]",
     clean: true,
   },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      name: false,
-    },
-  },
   plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: Path.resolve(__dirname, "../src/images"), to: "images" },
-      ],
-    }),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/index.html"),
     }),
@@ -43,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        type: "asset",
+        type: "asset/resource",
       },
     ],
   },
