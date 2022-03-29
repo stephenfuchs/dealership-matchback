@@ -10,7 +10,6 @@
 
 <body>
   <section id="startup">
-
     <div class="modal fade" id="clientForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="clientFormLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -37,14 +36,11 @@
                 <input class="form-control" type="file" id="csvFile">
                 <div id="csvHelp" class="form-text">Uplad a valid .csv file</div>
               </div>
-              <button type="submit" class="btn btn-primary"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+              <button type="submit" class="btn btn-primary me-2"><svg class="bi me-2" width="16" height="16" fill="currentColor">
                   <use xlink:href="/public/images/bootstrap-icons.svg#pie-chart" />
                 </svg>Generate Report</button>
+              <button type="button" class="btn btn-link" data-bs-dismiss="modal">Cancel</button>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
           </div>
         </div>
       </div>
