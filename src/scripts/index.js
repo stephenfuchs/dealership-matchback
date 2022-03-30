@@ -1,18 +1,6 @@
 import "../styles/index.scss";
 
 import "bootstrap";
-import DateRangePicker from "vanillajs-datepicker/DateRangePicker";
-
-const elem = document.getElementById("dateRange");
-new DateRangePicker(elem, {
-  buttonClass: "btn",
-  allowOneSidedRange: true,
-  format: {
-    toValue(date) {
-      return DateRangePicker.formatDate(date, "MM dd, y");
-    },
-  },
-});
 
 let dealership = document.querySelector(".header__dealership");
 let startDate = document.querySelector(".header__dates--start");
