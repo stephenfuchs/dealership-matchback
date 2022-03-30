@@ -9,31 +9,30 @@
 </head>
 
 <body>
-  <section id="startup">
+  <section id="modal">
     <div class="modal fade" id="clientForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="clientFormLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
             <img src="/public/images/matchback_logo-dark.svg" alt="Matchback Report Logo" class="mx-auto mb-9 d-block img-fluid">
-            <form>
+            <form class="form">
               <div class="mb-3">
                 <label for="clientName" class="form-label">Client Name</label>
-                <input type="text" class="form-control" id="clientName" aria-describedby="clientHelp">
-                <div id="clientHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <input type="text" class="form-control form__input--client" name="clientName" id="clientName" aria-describedby="clientHelp">
               </div>
               <div class="row date input-daterange" id="dateRange">
                 <div class="col mb-3">
                   <label for="startDate" class="form-label">Start Date</label>
-                  <input type="text" name="startDate" class="form-control datepicker-input" autocomplete="off">
+                  <input type="text" id="startDate" name="startDate" class="form-control datepicker-input form__input--startDate" autocomplete="off">
                 </div>
                 <div class="col mb-3">
                   <label for="endDate" class="form-label">End Date</label>
-                  <input type="text" name="endDate" class="form-control datepicker-input">
+                  <input type="text" id="endDate" name="endDate" class="form-control datepicker-input form__input--endDate">
                 </div>
               </div>
               <div class="mb-3">
                 <label for="csvFile" class="form-label">CSV Data</label>
-                <input class="form-control" type="file" id="csvFile">
+                <input class="form-control" type="file" name="csvFile" id="csvFile">
                 <div id="csvHelp" class="form-text">Uplad a valid .csv file</div>
               </div>
               <button type="submit" class="btn btn-primary me-2"><svg class="bi me-2" width="16" height="16" fill="currentColor">
@@ -82,7 +81,7 @@
       </div>
       <div class="container d-flex flex-wrap">
         <h1 class="h3 mb-0 flex-grow-1">Email Marketing Program</h1>
-        <p class="header__dates text-muted mb-0 text-align-end">March 1, 2022 - April 1, 2022</p>
+        <p class="header__dates text-muted mb-0 text-align-end"><span class="header__dates--start"></span> - <span class="header__dates--end"></span></p>
       </div>
     </header>
     <section class="map mb-6">
