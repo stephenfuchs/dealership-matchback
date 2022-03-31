@@ -18,27 +18,29 @@
             <form class="form">
               <div class="mb-3">
                 <label for="clientName" class="form-label">Client Name</label>
-                <input type="text" class="form-control form__input--client" name="clientName" id="clientName" aria-describedby="clientHelp">
+                <input type="text" class="form-control form__input--client" name="clientName" id="clientName" aria-describedby="clientHelp" required="required">
               </div>
               <div class="row">
                 <div class="col mb-3">
                   <label for="startDate" class="form-label">Start Date</label>
-                  <input type="date" id="startDate" name="startDate" class="form-control form__input--startDate" autocomplete="off">
+                  <input type="date" id="startDate" name="startDate" class="form-control form__input--startDate" autocomplete="off" required="required">
                 </div>
                 <div class="col mb-3">
                   <label for="endDate" class="form-label">End Date</label>
-                  <input type="date" id="endDate" name="endDate" class="form-control form__input--endDate" autocomplete="off">
+                  <input type="date" id="endDate" name="endDate" class="form-control form__input--endDate" autocomplete="off" required="required">
                 </div>
               </div>
               <div class="mb-3">
                 <label for="csvFile" class="form-label">CSV Data</label>
                 <input class="form-control" type="file" name="csvFile" id="csvFile">
-                <div id="csvHelp" class="form-text">Uplad a valid .csv file</div>
+                <div id="csvHelp" class="form-text">Upload a valid .csv file</div>
               </div>
-              <button type="submit" class="btn btn-primary me-2"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+              <button type="submit" class="btn btn-primary me-2" data-bs-dismiss="modal"><svg class="bi me-2" width="16" height="16" fill="currentColor">
                   <use xlink:href="/public/images/bootstrap-icons.svg#pie-chart" />
                 </svg>Generate Report</button>
-              <button type="button" class="btn btn-link" data-bs-dismiss="modal">Cancel</button>
+              <!-- <button type="submit" class="btn btn-primary me-2"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+                  <use xlink:href="/public/images/bootstrap-icons.svg#pie-chart" />
+                </svg>Generate Report</button> -->
             </form>
           </div>
         </div>
@@ -55,7 +57,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <div class="btn-group me-3" role="group" aria-label="Create new or modify button group">
-              <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#clientForm"><svg class="bi me-2" width="16" height="16" fill="currentColor">
+              <button type="button" class="btn btn-outline-light" id="btnNew"><svg class="bi me-2" width="16" height="16" fill="currentColor">
                   <use xlink:href="/public/images/bootstrap-icons.svg#plus-circle" />
                 </svg>New</button>
               <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#clientForm"><svg class="bi me-2" width="16" height="16" fill="currentColor">
@@ -72,7 +74,7 @@
     <header class="header mb-3">
       <div class="container d-flex mb-6">
         <div class="flex-grow-1">
-          <p class="header__dealership h5 mb-0">Lexus of Naperville</p>
+          <p class="header__dealership h5 mb-0"></p>
           <p class="header__report text-muted mb-0">Influenced Sales Report</p>
         </div>
         <div class="align-self-center d-none d-sm-block">

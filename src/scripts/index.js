@@ -1,25 +1,46 @@
 import "../styles/index.scss";
 
-import "bootstrap";
+import * as bootstrap from "bootstrap";
 
-let dealership = document.querySelector(".header__dealership");
-let startDate = document.querySelector(".header__dates--start");
-let endDate = document.querySelector(".header__dates--end");
+const form = document.querySelector("form");
+const dealership = document.querySelector(".header__dealership");
+const startDate = document.querySelector(".header__dates--start");
+const endDate = document.querySelector(".header__dates--end");
+const btnNew = document.getElementById("btnNew");
 
-const addClient = (event) => {
+var myModal = new bootstrap.Modal(document.getElementById("clientForm"));
+myModal.show();
+// Form Functionality
+form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   let clientData = {
-    client: document.getElementById("clientName").value,
-    start: document.getElementById("startDate").value,
-    end: document.getElementById("endDate").value,
+    client: event.currentTarget.clientName.value,
+    start: event.currentTarget.startDate.value,
+    end: event.currentTarget.endDate.value,
   };
-  console.log(clientData.client);
+
+  let formatDate = (date) => {
+    return new Date(date).toLocaleDateString("en-us", {
+      timeZone: "UTC",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
   dealership.innerHTML = clientData.client;
-  startDate.innerHTML = clientData.start;
-  endDate.innerHTML = clientData.end;
-};
+  startDate.innerHTML = formatDate(clientData.start);
+  endDate.innerHTML = formatDate(clientData.end);
+});
 
-let form = document.querySelector("form");
-form.addEventListener("submit", addClient);
+// Reset form
+btnNew.addEventListener("click", function () {
+  if (
+    confirm(
+      `Are you sure you want to create a new report? The current data will be erased`
+    )
+  ) {
+    location.reload();
+  }
+});
