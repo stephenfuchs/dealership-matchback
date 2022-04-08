@@ -14,6 +14,8 @@ const btnPDF = document.getElementById("btnPDF");
 const pdfOutput = document.getElementById("pdfOutput");
 const tableNew = document.querySelector(".buyers-new__table");
 const tableUsed = document.querySelector(".buyers-used__table");
+const badgeNew = document.querySelector(".buyers-new__badge");
+const badgeUsed = document.querySelector(".buyers-used__badge");
 
 // TOGGLE DISPLAY
 function toggleApp() {
@@ -104,8 +106,13 @@ function parseCSV() {
       let isNew = results.data.filter((purchase) => purchase.condition == "N");
       let isUsed = results.data.filter((purchase) => purchase.condition == "U");
 
+      console.log(Object.keys(isNew).length);
+
       createTableData(isNew, tableNew);
       createTableData(isUsed, tableUsed);
+
+      countBuyers(isNew, badgeNew);
+      countBuyers(isUsed, badgeUsed);
     },
   });
 }
@@ -123,4 +130,9 @@ function createTableData(condition, location) {
     });
     location.appendChild(row);
   });
+}
+
+// CREATE BUYERS BADGE COUNT
+function countBuyers(condition, location) {
+  location.innerHTML = Object.keys(condition).length;
 }
